@@ -1,0 +1,7 @@
+- 👋 Hi, I’m @MelvinSnow
+- 👀 I’m interested in ServiceNow JavaScript snippets you might have...
+- 🌱 I’m currently learning JavaScript itself but I am a ServiceNow CMDB expert / Process Architect.
+- 💞️ I’m looking to collaborate on all of that.
+- 📫 How to reach me - here would be nice.
+- 😄 Pronouns: I'm a "he" since birth.
+- ⚡ Fun fact: Nothing of consequence
