@@ -6,7 +6,7 @@
         try {
             var gr = new GlideRecord(table);
             if (!gr.isValid()) {
-                gs.error('Table ' + table + ' does not exist.');
+                gs.error('Table ' + table + ' does not exist.\n');
                 return;
             }
 
