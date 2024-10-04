@@ -1,24 +1,29 @@
 (function() {
-    var tables = ['cmdb_ci', 'cmdb_rel_ci', 'cmdb_ci_windows']; // Replace with your table names
+    var tables = [
+      'core_company',
+      'alm_asset',
+      'cmdb_ci',
+      'cmdb_rel_ci'
+    ]; // Replace with your table names
     var result = {};
 
     tables.forEach(function(table) {
-        try {
-            var gr = new GlideRecord(table);
-            if (!gr.isValid()) {
-                gs.error('Table ' + table + ' does not exist.\n');
-                return;
-            }
+      try {
+        var gr = new GlideRecord(table);
+          if (!gr.isValid()) {
+              gs.error('Table ' + table + ' does not exist.\n');
+              return;
+          }
 
-            var ga = new GlideAggregate(table);
-            ga.addAggregate('COUNT');
-            ga.query();
-            if (ga.next()) {
-                result[table] = ga.getAggregate('COUNT');
-            }
-        } catch (e) {
-            gs.error('Error processing table ' + table + ': ' + e.message);
-        }
+          var ga = new GlideAggregate(table);
+          ga.addAggregate('COUNT');
+          ga.query();
+          if (ga.next()) {
+              result[table] = ga.getAggregate('COUNT');
+          }
+      } catch (e) {
+          gs.error('Error processing table ' + table + ': ' + e.message);
+      }
     });
 
     gs.info(JSON.stringify(result));
